@@ -182,7 +182,11 @@ import ChartSection from "../sections/chart.astro";
                 display: true,
                 color: "#250101",
                 font: {
-                  size: sizeFn(),
+                  size: (function (context) {
+                    const width = window.innerWidth;
+                    const size = width > 600 ? 14 : 6;
+                    return size;
+                  })(),
                   weight: 800,
                   family: "Libre Franklin",
                 },
@@ -208,7 +212,11 @@ import ChartSection from "../sections/chart.astro";
                 display: true,
                 color: "#250101",
                 font: {
-                  size: sizeFn(),
+                  size: (function (context) {
+                    const width = window.innerWidth;
+                    const size = width > 600 ? 14 : 6;
+                    return size;
+                  })(),
                   weight: 800,
                   family: "Libre Franklin",
                 },
@@ -227,17 +235,12 @@ import ChartSection from "../sections/chart.astro";
           ],
         },
         options: {
-          scales: {
-            y: {},
-          },
           indexAxis: "y",
-
           responsive: true,
           normalized: true,
           maintainAspectRatio: false,
           plugins: {
             htmlLegend: {
-              // ID of the container to put the legend in
               containerID: "legend-container",
             },
             legend: {
