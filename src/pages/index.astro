@@ -1,0 +1,253 @@
+---
+// fonts
+import "@fontsource/lexend";
+import "@fontsource/libre-franklin/800.css";
+
+// sections
+import HeroSection from "../sections/hero.astro";
+import Forwardection from "../sections/forward.astro";
+import OverviewSection from "../sections/overview.astro";
+import TheorySection from "../sections/theory.astro";
+import TestimonialsSection from "../sections/testimonials.astro";
+import CondomsSection from "../sections/condoms.astro";
+import ChartSection from "../sections/chart.astro";
+---
+
+<style is:global>
+  /* Register your custom font family and tell the browser where to find it. */
+  @font-face {
+    font-family: "Almarai";
+    src: url("/fonts/Almarai.woff") format("woff");
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #800001;
+  }
+</style>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="overflow-x-hidden w-screen">
+    <HeroSection />
+    <Forwardection />
+    <OverviewSection />
+    <TheorySection />
+    <TestimonialsSection />
+    <CondomsSection />
+    <ChartSection />
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
+    ></script>
+
+    <script is:inline>
+      new Swiper(".swiper", {
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        autoplay: {
+          delay: 6000,
+        },
+      });
+    </script>
+
+    <script is:inline src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2 "></script>
+
+    <script is:inline>
+      const getOrCreateLegendList = (chart, id) => {
+        const legendContainer = document.getElementById(id);
+        let listContainer = legendContainer.querySelector("ul");
+
+        if (!listContainer) {
+          listContainer = document.createElement("ul");
+          listContainer.style.display = "flex";
+          listContainer.style.flexDirection = "row";
+          listContainer.style.margin = 0;
+          listContainer.style.padding = 0;
+
+          legendContainer.appendChild(listContainer);
+        }
+
+        return listContainer;
+      };
+
+      const htmlLegendPlugin = {
+        id: "htmlLegend",
+        afterUpdate(chart, args, options) {
+          const ul = getOrCreateLegendList(chart, options.containerID);
+
+          // Remove old legend items
+          while (ul.firstChild) {
+            ul.firstChild.remove();
+          }
+
+          // Reuse the built-in legendItems generator
+          const items =
+            chart.options.plugins.legend.labels.generateLabels(chart);
+
+          items.forEach((item) => {
+            const li = document.createElement("li");
+            li.style.alignItems = "center";
+            li.style.cursor = "pointer";
+            li.style.display = "flex";
+            li.style.flexDirection = "row";
+            li.style.marginLeft = "10px";
+
+            li.onclick = () => {
+              const { type } = chart.config;
+              if (type === "pie" || type === "doughnut") {
+                // Pie and doughnut charts only have a single dataset and visibility is per item
+                chart.toggleDataVisibility(item.index);
+              } else {
+                chart.setDatasetVisibility(
+                  item.datasetIndex,
+                  !chart.isDatasetVisible(item.datasetIndex)
+                );
+              }
+              chart.update();
+            };
+
+            // Color box
+            const boxSpan = document.createElement("span");
+            boxSpan.style.background = item.fillStyle;
+            boxSpan.style.borderColor = item.strokeStyle;
+            boxSpan.style.borderWidth = item.lineWidth + "px";
+            boxSpan.style.display = "inline-block";
+            boxSpan.style.flexShrink = 0;
+            boxSpan.style.height = "20px";
+            boxSpan.style.marginRight = "10px";
+            boxSpan.style.width = "20px";
+
+            // Text
+            const textContainer = document.createElement("p");
+            textContainer.style.color = item.fontColor;
+            textContainer.style.margin = 0;
+            textContainer.style.padding = 0;
+            textContainer.style.textDecoration = item.hidden
+              ? "line-through"
+              : "";
+
+            const text = document.createTextNode(item.text);
+            textContainer.appendChild(text);
+
+            li.appendChild(boxSpan);
+            li.appendChild(textContainer);
+            ul.appendChild(li);
+          });
+        },
+      };
+
+      const ctx = document.getElementById("myChart");
+      const sizeFn = function (context) {
+        const width = context?.chart.width;
+        const size = width > 600 ? 18 : 6;
+        return size;
+      };
+
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: [
+            "Gonorrhea",
+            "Chlamydia",
+            "Hepatitis B",
+            "HIV",
+            "syphylis",
+            "Herpes simplex virus",
+            "hpv",
+            "prefer not to answer",
+          ],
+          datasets: [
+            {
+              label: "2022",
+              data: [[54], [13], [11], [8], [7], [6], [3], [12]],
+              backgroundColor: "#800001",
+              datalabels: {
+                align: "end",
+                anchor: "end",
+                display: true,
+                color: "#250101",
+                font: {
+                  size: sizeFn(),
+                  weight: 800,
+                  family: "Libre Franklin",
+                },
+                formatter: function (value) {
+                  return `${value}%`;
+                },
+                labels: {
+                  title: {
+                    font: {
+                      weight: "bold",
+                    },
+                  },
+                },
+              },
+            },
+            {
+              label: "2023",
+              data: [[24], [26], [11], [8], [6], [11], [8], [35]],
+              backgroundColor: "#250101",
+              datalabels: {
+                align: "end",
+                anchor: "end",
+                display: true,
+                color: "#250101",
+                font: {
+                  size: sizeFn(),
+                  weight: 800,
+                  family: "Libre Franklin",
+                },
+                formatter: function (value) {
+                  return `${value}%`;
+                },
+                labels: {
+                  title: {
+                    font: {
+                      weight: "bold",
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              display: false,
+            },
+          },
+
+          responsive: true,
+          normalized: true,
+          maintainAspectRatio: false,
+          plugins: {
+            htmlLegend: {
+              // ID of the container to put the legend in
+              containerID: "legend-container",
+            },
+            legend: {
+              display: false,
+            },
+          },
+        },
+        plugins: [ChartDataLabels, htmlLegendPlugin],
+      });
+    </script>
+  </body>
+</html>

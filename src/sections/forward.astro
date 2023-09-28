@@ -1,0 +1,96 @@
+<div class="w-full py-20 lg:py-36 relative">
+  <div
+    class="z-10 flex flex-col lg:flex-row gap-y-8 px-8 lg:px-[5vw] 3xl:px-[10vw]"
+  >
+    <div class="flex flex-col items-start gap-y-20 w-full lg:max-w-[50%]">
+      <div class="flex flex-col gap-y-4 items-start">
+        <h2 class="text-5xl 3xl:text-[5rem] text-dark font-headings uppercase">
+          forward
+        </h2>
+        <div
+          id="accordion"
+          class="w-full transition-all ease-in-out duration-500 flex flex-col gap-y-8 lg:w-[80%] max-h-56 md:max-h-52 3xl:max-h-48 overflow-hidden font-paragraphs text-sm"
+        >
+          <p>Talking about sex can be awkward (but it shouldn’t be!)</p>
+          <p>
+            Since our initial Sex Lives Report in 2022, LetsStopAIDS, in
+            collaboration with the Angus Reid Group, has dug deep into the
+            factors affecting Canadian youth's sexual experiences. We found
+            Canadians were using fewer condoms, feeling more mental health
+            pressures, and getting more sexually adventurous.
+          </p>
+          <p>
+            The report made waves, being featured in over 300 media outlets such
+            as the National Post, Toronto Star, CTV, and Montreal Gazette,
+            reaching millions across Canada.
+          </p>
+          <p>
+            This year, we aimed to delve into young people's relationship with
+            their sexuality and gauge their knowledge on HIV and STI prevention.
+            The message was loud and clear: The conventional methods of
+            addressing sexuality are obsolete, more so in today's age that
+            values equality, diversity, and respect. The omnipresence of social
+            media, emerging online behaviours, and the tide of disinformation
+            only add layers of complexity to this issue. We need a sex-positive
+            & comprehensive approach to Sex-Ed.
+          </p>
+          <p>
+            For nearly two decades, as Canada's largest Youth-HIV charity, our
+            mission has been clear: to raise HIV awareness, foster youth
+            leadership, and reduce HIV-related stigma. This is pivotal. Without
+            proper awareness, access to testing, prevention, and treatment
+            remains elusive. And with prevalent stigma, talking about sex
+            becomes harder.
+          </p>
+          <p>
+            Our research isn't merely an academic exercise. It strengthens our
+            programmes and integrates youth in sculpting solutions. At
+            LetsStopAIDS, we believe that youth plays a crucial role in the
+            global response to HIV. And we are here to make that path possible.
+          </p>
+        </div>
+        <button id="readMore" class="z-10 uppercase font-headings">
+          read more</button
+        >
+      </div>
+      <p>
+        <span class="font-bold">Sincerely, Shamin Mohamed Jr.</span>
+        <br /> Founder & President LetsStopAIDS
+      </p>
+    </div>
+
+    <img
+      src="https://res.cloudinary.com/dsvly11gz/image/upload/f_auto/q_auto/c_scale,w_640/v1/SexLivesReport/zluzwgv6o9ezj5ctsuw4"
+      alt="Cover"
+      loading="lazy"
+      class="h-[400px] self-center md:self-start md:h-[600px] lg:ml-[10%] z-10"
+      style={`background-image:
+        url(https://res.cloudinary.com/dsvly11gz/image/upload/e_blur:1000,q_1,f_auto,c_scale,w_auto/v1/SexLivesReport/zluzwgv6o9ezj5ctsuw4);`}
+      sizes="(min-width: 1024px) 50vw, 100vw"
+      srcset="
+      https://res.cloudinary.com/dsvly11gz/image/upload/f_auto/dpr_auto/q_auto/c_scale,w_640/v1/SexLivesReport/zluzwgv6o9ezj5ctsuw4 640w,
+      https://res.cloudinary.com/dsvly11gz/image/upload/f_auto/dpr_auto/q_auto/c_scale,w_768/v1/SexLivesReport/zluzwgv6o9ezj5ctsuw4 768w,
+      https://res.cloudinary.com/dsvly11gz/image/upload/f_auto/dpr_auto/q_auto/c_scale,w_1024/v1/SexLivesReport/zluzwgv6o9ezj5ctsuw4 1024w,
+      https://res.cloudinary.com/dsvly11gz/image/upload/f_auto/dpr_auto/q_auto/c_scale,w_1536/v1/SexLivesReport/zluzwgv6o9ezj5ctsuw4 1536w,
+      https://res.cloudinary.com/dsvly11gz/image/upload/f_auto/dpr_auto/q_auto/c_scale,w_1920/v1/SexLivesReport/zluzwgv6o9ezj5ctsuw4 1920w"
+    />
+  </div>
+  <div class="absolute top-0 left-0 h-full w-full">
+    <img
+      src="https://res.cloudinary.com/dsvly11gz/image/upload/f_auto,q_auto,w_auto,c_scale/v1/SexLivesReport/orfrhe0sc7b7gfrtjnkd"
+      alt="Cover"
+      class="object-cover h-full w-full"
+    />
+  </div>
+</div>
+
+<script>
+  const readMoreBtn = document.getElementById("readMore");
+
+  if (readMoreBtn !== null) {
+    readMoreBtn.addEventListener("click", function () {
+      const accordion = document.getElementById("accordion");
+      accordion?.classList.toggle("!max-h-[300vh]");
+    });
+  }
+</script>
