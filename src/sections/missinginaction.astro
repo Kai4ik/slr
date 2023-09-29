@@ -8,17 +8,8 @@
       missing in action
     </h2>
     <div class="pr-20 flex flex-col gap-y-4">
-      <p class="font-headings text-4xl">Pleasure</p>
-      <p class="font-paragraphs text-lg">
-        The lack of curriculum addressing pleasure and positive aspects of sex
-        was another evident theme in the responses. Many participants expressed
-        their dissatisfaction with the absence of comprehensive information
-        about the pleasurable aspects of sexual experiences. Lindsay from
-        Moncton shared that she wished she learned “more about sex that is not
-        penetrative between a man and woman. I wish I learned about a female
-        orgasm because I did not understand it (as a woman) until I was 21 years
-        old despite being sexually active since I was 16”.
-      </p>
+      <p id="title" class="font-headings text-4xl"></p>
+      <p id="details" class="font-paragraphs text-lg"></p>
     </div>
   </div>
   <div class="flex w-1/2 flex-col gap-y-8 z-10 -my-20 pt-24 bg-floral-white">
@@ -26,7 +17,7 @@
       What topics were not covered in Sex-Ed, but you wish you learned?
     </p>
     <div class="flex flex-col">
-      <div class="flex flex-col cursor-pointer hover:bg-[#D97803]">
+      <div class="flex flex-col cursor-pointer hover:bg-[#D97803]" id="gasi">
         <div
           class="flex items-center gap-x-8 w-full py-4 pl-4 lg:pl-16 border-b-[1px] border-[#D97803]"
         >
@@ -35,7 +26,7 @@
         </div>
       </div>
 
-      <div class="flex flex-col cursor-pointer hover:bg-[#D97803]">
+      <div class="flex flex-col cursor-pointer hover:bg-[#D97803]" id="consent">
         <div
           class="flex items-center gap-x-8 w-full py-4 pl-4 lg:pl-16 border-b-[1px] border-[#D97803]"
         >
@@ -44,7 +35,10 @@
         </div>
       </div>
 
-      <div class="flex flex-col cursor-pointer hover:bg-[#D97803]">
+      <div
+        class="flex flex-col cursor-pointer hover:bg-[#D97803]"
+        id="pleasure"
+      >
         <div
           class="flex items-center gap-x-8 w-full py-4 pl-4 lg:pl-16 border-b-[1px] border-[#D97803]"
         >
@@ -54,6 +48,7 @@
       </div>
 
       <div
+        id="mfsh"
         class="flex flex-col cursor-pointer hover:bg-[#D97803] border-b-[1px] border-[#D97803]"
       >
         <div class="flex items-center gap-x-8 py-4 w-full pl-4 lg:pl-16">
@@ -63,6 +58,7 @@
       </div>
 
       <div
+        id="porn"
         class="flex items-center gap-x-8 w-full py-4 pl-4 lg:pl-16 cursor-pointer hover:bg-[#D97803]"
       >
         <p class="font-number-headings text-[5rem]">7%</p>
@@ -79,3 +75,64 @@
     />
   </div>
 </div>
+
+<script is:inline>
+const pornStats = document.getElementById("porn");
+const pleasureStats = document.getElementById("pleasure");
+const mfshStats = document.getElementById("mfsh");
+const gasiStats = document.getElementById("gasi");
+const consentStats = document.getElementById("consent");
+
+const title = document.getElementById("title");
+const details = document.getElementById("details");
+
+pornStats.addEventListener("mouseover", (event) => {
+  title.innerText = "Porn";
+  details.innerText =
+    "Some respondents felt that the topic of porn and its negative as well as positive effects on youth was missing and necessary to cover given porn’s accessibility in today’s digital age. Noah from Barrie shared, “[I wish I had learnt about] “porn and how it affects the brain and the performance of your partner”";
+});
+pornStats.addEventListener("mouseout", (event) => {
+  title.innerText = "";
+  details.innerText = "";
+});
+
+pleasureStats.addEventListener("mouseover", (event) => {
+  title.innerText = "Pleasure";
+  details.innerText =
+    "The lack of curriculum addressing pleasure and positive aspects of sex was another evident theme in the responses. Many participants expressed their dissatisfaction with the absence of comprehensive information about the pleasurable aspects of sexual experiences. Lindsay from Moncton shared that she wished she learned “more about sex that is not penetrative between a man and woman. I wish I learned about a female orgasm because I did not understand it (as a woman) until I was 21 years old despite being sexually active since I was 16”.";
+});
+pleasureStats.addEventListener("mouseout", (event) => {
+  title.innerText = "";
+  details.innerText = "";
+});
+
+mfshStats.addEventListener("mouseover", (event) => {
+  title.innerText = "More Female Sexual Health";
+  details.innerText =
+    "Respondents also pointed out the lack of knowledge shared specifically regarding female sexualhealth. They felt that their sexual education predominantly focused on male perspectives, neglecting crucial aspects of female reproductive health and sexuality. Jasmine from Canmore shared, “[I wish I had learnt about] Female anatomy; sex; female pleasure; information about IUDs and other forms of contraception.”";
+});
+mfshStats.addEventListener("mouseout", (event) => {
+  title.innerText = "";
+  details.innerText = "";
+});
+
+consentStats.addEventListener("mouseover", (event) => {
+  title.innerText = "Consent/Relationships";
+  details.innerText =
+    "The respondents expressed a desire for a stronger focus on consent, feeling that it had been inadequately addressed in their sexual education. Sapna from Winnipeg shared “I believe the absolute first thing all youth should be taught about is Sex-Ed...a lack of education on consent is massively hurting our society”.";
+});
+consentStats.addEventListener("mouseout", (event) => {
+  title.innerText = "";
+  details.innerText = "";
+});
+
+gasiStats.addEventListener("mouseover", (event) => {
+  title.innerText = "Gender and Sexual Identity";
+  details.innerText =
+    "Many respondents expressed their belief that the sexual education they received was primarily heteronormative, lacking coverage of diverse identities and failing to address the complexities of gender and sexual orientation. Only 34% of young Canadians recall learningabout sexuality and sexual orientation, and only 19% remember learning about gender identity.";
+});
+gasiStats.addEventListener("mouseout", (event) => {
+  title.innerText = "";
+  details.innerText = "";
+});
+</script>
