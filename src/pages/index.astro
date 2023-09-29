@@ -93,6 +93,17 @@ import Footer from "../sections/footer/index.astro";
           duration: 0.75,
           stagger: 0.25,
         });
+
+        gsap.from(section.querySelectorAll(".arrow"), {
+          scrollTrigger: {
+            trigger: section,
+            start: "top 50%",
+          },
+          autoAlpha: 0,
+          transformOrigin: "center top",
+          scaleY: 0,
+          duration: 2,
+        });
       });
     </script>
 
@@ -106,6 +117,7 @@ import Footer from "../sections/footer/index.astro";
         loop: true,
         pagination: {
           el: ".swiper-pagination",
+          clickable: true,
         },
         autoplay: {
           delay: 6000,
