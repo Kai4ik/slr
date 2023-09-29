@@ -12,6 +12,7 @@ import TestimonialsSection from "../sections/testimonials.astro";
 import CondomsSection from "../sections/condoms.astro";
 import ChartSection from "../sections/chart.astro";
 import MissingInActionSection from "../sections/missinginaction.astro";
+import StiHivSection from "../sections/stihiv.astro";
 ---
 
 <style is:global>
@@ -46,12 +47,13 @@ import MissingInActionSection from "../sections/missinginaction.astro";
     <TestimonialsSection />
     <MissingInActionSection />
     <CondomsSection />
+    <StiHivSection />
     <ChartSection />
     <script
       is:inline
       src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"
     ></script>
-    <script is:inline>
+    <script>
       (function () {
         const locomotiveScroll = new LocomotiveScroll();
       })();
@@ -66,7 +68,7 @@ import MissingInActionSection from "../sections/missinginaction.astro";
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
     ></script>
 
-    <script is:inline>
+    <script>
       gsap.registerPlugin(ScrollTrigger);
 
       gsap.utils.toArray(".section").forEach((section) => {
@@ -74,7 +76,6 @@ import MissingInActionSection from "../sections/missinginaction.astro";
           scrollTrigger: {
             trigger: section,
             start: "top 50%",
-            markers: true,
           },
           autoAlpha: 0,
           y: 25,
@@ -89,7 +90,7 @@ import MissingInActionSection from "../sections/missinginaction.astro";
       src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
     ></script>
 
-    <script is:inline>
+    <script>
       new Swiper(".swiper", {
         loop: true,
         pagination: {
@@ -104,7 +105,8 @@ import MissingInActionSection from "../sections/missinginaction.astro";
     <script is:inline src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script
       is:inline
-      src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2 "></script>
+      src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2 "
+    ></script>
 
     <script is:inline>
       const getOrCreateLegendList = (chart, id) => {
