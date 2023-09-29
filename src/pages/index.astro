@@ -67,9 +67,15 @@ import MissingInActionSection from "../sections/missinginaction.astro";
     ></script>
 
     <script is:inline>
+      gsap.registerPlugin(ScrollTrigger);
+
       gsap.utils.toArray(".section").forEach((section) => {
         gsap.from(section.querySelectorAll(".animate-presense"), {
-          scrollTrigger: section
+          scrollTrigger: {
+            trigger: section,
+            start: "top 50%",
+            markers: true,
+          },
           autoAlpha: 0,
           y: 25,
           duration: 0.75,
