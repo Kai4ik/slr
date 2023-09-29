@@ -13,6 +13,8 @@ import CondomsSection from "../sections/condoms.astro";
 import ChartSection from "../sections/chart.astro";
 import MissingInActionSection from "../sections/missinginaction.astro";
 import StiHivSection from "../sections/stihiv.astro";
+import ClosingRemarks from "../sections/closingremarks.astro";
+import Footer from "../sections/footer/index.astro";
 ---
 
 <style is:global>
@@ -49,13 +51,22 @@ import StiHivSection from "../sections/stihiv.astro";
     <CondomsSection />
     <StiHivSection />
     <ChartSection />
+    <ClosingRemarks />
+    <Footer />
     <script
       is:inline
       src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"
     ></script>
     <script>
       (function () {
-        const locomotiveScroll = new LocomotiveScroll();
+        const locomotiveScroll = new LocomotiveScroll({
+          autoResize: false,
+        });
+
+        window.addEventListener(
+          "resize",
+          locomotiveScroll.resize.bind(locomotiveScroll)
+        );
       })();
     </script>
 
@@ -105,8 +116,7 @@ import StiHivSection from "../sections/stihiv.astro";
     <script is:inline src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script
       is:inline
-      src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2 "
-    ></script>
+      src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2 "></script>
 
     <script is:inline>
       const getOrCreateLegendList = (chart, id) => {
