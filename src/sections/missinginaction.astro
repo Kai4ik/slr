@@ -9,33 +9,41 @@
     >
       missing in action
     </h2>
-    <div class="pr-20 flex flex-col gap-y-4">
+    <div class="pr-20 flex flex-col gap-y-8">
+      <div id="statCircle"></div>
       <p id="title" class="font-headings text-4xl"></p>
       <p id="details" class="font-paragraphs text-lg"></p>
     </div>
   </div>
   <div
-    class="w-1/2 flex-col gap-y-8 z-10 -my-20 pt-24 bg-floral-white hidden lg:flex"
+    class="w-1/2 overflow-hidden flex-col gap-y-8 z-10 -my-20 pt-24 bg-floral-white hidden lg:flex"
   >
     <p class="text-3xl font-headings text-dark max-w-[80%] pl-4 lg:pl-16">
       What topics were not covered in Sex-Ed, but you wish you learned?
     </p>
-    <div class="flex flex-col">
-      <div class="flex flex-col cursor-pointer hover:bg-[#D97803]" id="gasi">
+    <div class="flex flex-col w-full">
+      <div
+        class="flex flex-col w-full cursor-pointer hover:bg-[#D97803]"
+        id="gasi"
+      >
         <div
           class="animate-presense flex items-center gap-x-8 w-full py-4 pl-4 lg:pl-16 border-b-[1px] border-[#D97803]"
         >
-          <p class="font-number-headings text-[5rem]">33%</p>
-          <p class="font-paragraphs text-2xl">Gender and Sexual Identity</p>
+          <p class="font-number-headings text-[4rem] xl:text-[5rem]">33%</p>
+          <p class="font-paragraphs text-2xl max-w-[50%]">
+            Gender and Sexual Identity
+          </p>
         </div>
       </div>
 
       <div class="flex flex-col cursor-pointer hover:bg-[#D97803]" id="consent">
         <div
-          class="animate-presense flex items-center gap-x-8 w-full py-4 pl-4 lg:pl-16 border-b-[1px] border-[#D97803]"
+          class="animate-presense flex items-center gap-x-8 w-full overflow-hidden py-4 pl-4 lg:pl-16 border-b-[1px] border-[#D97803]"
         >
-          <p class="font-number-headings text-[5rem]">20%</p>
-          <p class="font-paragraphs text-2xl">Consent/ Relationships</p>
+          <p class="font-number-headings text-[4rem] xl:text-[5rem]">20%</p>
+          <p class="font-paragraphs text-2xl max-w-[50%]">
+            Consent/ Relationships
+          </p>
         </div>
       </div>
 
@@ -46,8 +54,8 @@
         <div
           class="animate-presense flex items-center gap-x-8 w-full py-4 pl-4 lg:pl-16 border-b-[1px] border-[#D97803]"
         >
-          <p class="font-number-headings text-[5rem]">16%</p>
-          <p class="font-paragraphs text-2xl">Pleasure</p>
+          <p class="font-number-headings text-[4rem] xl:text-[5rem]">16%</p>
+          <p class="font-paragraphs text-2xl max-w-[50%]">Pleasure</p>
         </div>
       </div>
 
@@ -58,8 +66,10 @@
         <div
           class="animate-presense flex items-center gap-x-8 py-4 w-full pl-4 lg:pl-16"
         >
-          <p class="font-number-headings text-[5rem]">11%</p>
-          <p class="font-paragraphs text-2xl">More Female Sexual Health</p>
+          <p class="font-number-headings text-[4rem] xl:text-[5rem]">11%</p>
+          <p class="font-paragraphs text-2xl max-w-[50%]">
+            More Female Sexual Health
+          </p>
         </div>
       </div>
 
@@ -67,8 +77,8 @@
         id="porn"
         class="animate-presense flex items-center gap-x-8 w-full py-4 pl-4 lg:pl-16 cursor-pointer hover:bg-[#D97803]"
       >
-        <p class="font-number-headings text-[5rem]">7%</p>
-        <p class="font-paragraphs text-2xl">Porn</p>
+        <p class="font-number-headings text-[4rem] xl:text-[5rem]">7%</p>
+        <p class="font-paragraphs text-2xl max-w-[50%]">Porn</p>
       </div>
     </div>
   </div>
@@ -92,7 +102,7 @@
             height="7"
             viewBox="0 0 12 7"
             fill="none"
-            class="duration-500 ease-in-out transition-all"
+            class="duration-700 ease-linear transition-all"
           >
             <path
               d="M1 1C1.4 1.4 4.5 4.5 6 6L11 1"
@@ -101,7 +111,7 @@
           </svg>
         </div>
         <div
-          class="max-h-0 font-paragraphs text-lg pt-4 transition-all ease-in-out overflow-hidden duration-500"
+          class="max-h-0 opacity-0 font-paragraphs text-lg pt-4 [transition:max-height_1.5s,opacity_1s] ease-linear overflow-hidden"
         >
           Many respondents expressed their belief that the sexual education they
           received was primarily heteronormative, lacking coverage of diverse
@@ -127,7 +137,7 @@
             height="7"
             viewBox="0 0 12 7"
             fill="none"
-            class="duration-500 ease-in-out transition-all"
+            class="duration-700 ease-linear transition-all"
           >
             <path
               d="M1 1C1.4 1.4 4.5 4.5 6 6L11 1"
@@ -136,7 +146,7 @@
           </svg>
         </div>
         <div
-          class="max-h-0 font-paragraphs text-lg pt-4 transition-all ease-in-out overflow-hidden duration-500"
+          class="max-h-0 opacity-0 font-paragraphs text-lg pt-4 [transition:max-height_1.5s,opacity_1s] ease-linear overflow-hidden"
         >
           The respondents expressed a desire for a stronger focus on consent,
           feeling that it had been inadequately addressed in their sexual
@@ -161,7 +171,7 @@
             height="7"
             viewBox="0 0 12 7"
             fill="none"
-            class="duration-500 ease-in-out transition-all"
+            class="duration-700 ease-linear transition-all"
           >
             <path
               d="M1 1C1.4 1.4 4.5 4.5 6 6L11 1"
@@ -170,7 +180,7 @@
           </svg>
         </div>
         <div
-          class="max-h-0 font-paragraphs text-lg pt-4 transition-all ease-in-out overflow-hidden duration-500"
+          class="max-h-0 opacity-0 font-paragraphs text-lg pt-4 [transition:max-height_1.5s,opacity_1s] ease-linear overflow-hidden"
         >
           The lack of curriculum addressing pleasure and positive aspects of sex
           was another evident theme in the responses. Many participants
@@ -199,7 +209,7 @@
             height="7"
             viewBox="0 0 12 7"
             fill="none"
-            class="duration-500 ease-in-out transition-all"
+            class="duration-700 ease-linear transition-all"
           >
             <path
               d="M1 1C1.4 1.4 4.5 4.5 6 6L11 1"
@@ -208,7 +218,7 @@
           </svg>
         </div>
         <div
-          class="max-h-0 font-paragraphs text-lg pt-4 transition-all ease-in-out overflow-hidden duration-500"
+          class="max-h-0 opacity-0 font-paragraphs text-lg pt-4 [transition:max-height_1.5s,opacity_1s] ease-linear overflow-hidden"
         >
           Respondents also pointed out the lack of knowledge shared specifically
           regarding female sexualhealth. They felt that their sexual education
@@ -234,7 +244,7 @@
             height="7"
             viewBox="0 0 12 7"
             fill="none"
-            class="duration-500 ease-in-out transition-all"
+            class="duration-700 ease-linear transition-all"
           >
             <path
               d="M1 1C1.4 1.4 4.5 4.5 6 6L11 1"
@@ -243,7 +253,7 @@
           </svg>
         </div>
         <div
-          class="max-h-0 font-paragraphs text-lg pt-4 transition-all ease-in-out overflow-hidden duration-500"
+          class="max-h-0 opacity-0 font-paragraphs text-lg pt-4 [transition:max-height_1.5s,opacity_1s] ease-linear overflow-hidden"
         >
           Some respondents felt that the topic of porn and its negative as well
           as positive effects on youth was missing and necessary to cover given
@@ -268,6 +278,7 @@ const gasimobile = document.getElementById("gasim");
 gasimobile.addEventListener("click", (event) => {
   gasimobile.lastElementChild.style.maxHeight =
     gasimobile.lastElementChild.style.maxHeight === "300vh" ? "0" : "300vh";
+  gasimobile.lastElementChild.classList.toggle("opacity-100");
 
   gasimobile.getElementsByTagName("svg")[0].style.rotate =
     gasimobile.getElementsByTagName("svg")[0].style.rotate === "180deg"
@@ -281,6 +292,7 @@ consentmobile.addEventListener("click", (event) => {
     consentmobile.lastElementChild.style.maxHeight === "300vh"
       ? "0"
       : "300vh";
+  consentmobile.lastElementChild.classList.toggle("opacity-100");
 
   consentmobile.getElementsByTagName("svg")[0].style.rotate =
     consentmobile.getElementsByTagName("svg")[0].style.rotate === "180deg"
@@ -294,6 +306,7 @@ pleasuremobile.addEventListener("click", (event) => {
     pleasuremobile.lastElementChild.style.maxHeight === "300vh"
       ? "0"
       : "300vh";
+  pleasuremobile.lastElementChild.classList.toggle("opacity-100");
 
   pleasuremobile.getElementsByTagName("svg")[0].style.rotate =
     pleasuremobile.getElementsByTagName("svg")[0].style.rotate === "180deg"
@@ -305,6 +318,7 @@ const mfshmobile = document.getElementById("mfshm");
 mfshmobile.addEventListener("click", (event) => {
   mfshmobile.lastElementChild.style.maxHeight =
     mfshmobile.lastElementChild.style.maxHeight === "300vh" ? "0" : "300vh";
+  mfshmobile.lastElementChild.classList.toggle("opacity-100");
 
   mfshmobile.getElementsByTagName("svg")[0].style.rotate =
     mfshmobile.getElementsByTagName("svg")[0].style.rotate === "180deg"
@@ -316,6 +330,7 @@ const pornmobile = document.getElementById("pornm");
 pornmobile.addEventListener("click", (event) => {
   pornmobile.lastElementChild.style.maxHeight =
     pornmobile.lastElementChild.style.maxHeight === "300vh" ? "0" : "300vh";
+  pornmobile.lastElementChild.classList.toggle("opacity-100");
 
   pornmobile.getElementsByTagName("svg")[0].style.rotate =
     pornmobile.getElementsByTagName("svg")[0].style.rotate === "180deg"
@@ -326,54 +341,106 @@ pornmobile.addEventListener("click", (event) => {
 // desktop
 const title = document.getElementById("title");
 const details = document.getElementById("details");
+const statCircle = document.getElementById("statCircle");
+
+const pornSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" width="152" height="152" viewBox="0 0 152 152" fill="none">
+  <g style="mix-blend-mode:multiply" opacity="0.6">
+    <path d="M152 76C152 117.974 117.974 152 76 152C34.0264 152 0 117.974 0 76C0 34.0264 34.0264 0 76 0C117.974 0 152 34.0264 152 76ZM6.84 76C6.84 114.196 37.804 145.16 76 145.16C114.196 145.16 145.16 114.196 145.16 76C145.16 37.804 114.196 6.84 76 6.84C37.804 6.84 6.84 37.804 6.84 76Z" fill="#E9E4D3"/>
+  </g>
+  <path d="M76 3.42C76 1.53119 77.5321 -0.00803385 79.419 0.0768991C94.7436 0.766687 109.504 6.0797 121.753 15.3149C123.261 16.452 123.461 18.6145 122.257 20.0701C121.053 21.5256 118.902 21.7221 117.389 20.5917C106.373 12.3631 93.1516 7.60392 79.4189 6.92451C77.5324 6.83117 76 5.30881 76 3.42Z" fill="#F6F4EC"/>
+</svg>`;
+
+const mfshSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" width="152" height="152" viewBox="0 0 152 152" fill="none">
+  <g style="mix-blend-mode:multiply" opacity="0.6">
+    <path d="M152 76C152 117.974 117.974 152 76 152C34.0264 152 0 117.974 0 76C0 34.0264 34.0264 0 76 0C117.974 0 152 34.0264 152 76ZM6.84 76C6.84 114.196 37.804 145.16 76 145.16C114.196 145.16 145.16 114.196 145.16 76C145.16 37.804 114.196 6.84 76 6.84C37.804 6.84 6.84 37.804 6.84 76Z" fill="#E9E4D3"/>
+  </g>
+  <path d="M76 3.42C76 1.53119 77.5321 -0.00803385 79.419 0.0768991C94.7436 0.766687 109.504 6.0797 121.753 15.3149C123.261 16.452 123.461 18.6145 122.257 20.0701C121.053 21.5256 118.902 21.7221 117.389 20.5917C106.373 12.3631 93.1516 7.60392 79.4189 6.92451C77.5324 6.83117 76 5.30881 76 3.42Z" fill="#F6F4EC"/>
+</svg>`;
+
+const pleasureSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" width="152" height="152" viewBox="0 0 152 152" fill="none">
+  <g style="mix-blend-mode:multiply" opacity="0.6">
+    <path d="M152 76C152 117.974 117.974 152 76 152C34.0264 152 0 117.974 0 76C0 34.0264 34.0264 0 76 0C117.974 0 152 34.0264 152 76ZM6.84 76C6.84 114.196 37.804 145.16 76 145.16C114.196 145.16 145.16 114.196 145.16 76C145.16 37.804 114.196 6.84 76 6.84C37.804 6.84 6.84 37.804 6.84 76Z" fill="#E9E4D3"/>
+  </g>
+  <path d="M76 3.42C76 1.53119 77.532 -0.00803151 79.4189 0.0769307C91.0366 0.600043 102.396 3.78354 112.613 9.40069C122.831 15.0178 131.605 22.9029 138.272 32.4317C139.355 33.9793 138.876 36.0976 137.281 37.1097C135.687 38.1218 133.58 37.6438 132.491 36.101C126.446 27.5427 118.526 20.4567 109.318 15.3946C100.11 10.3326 89.8837 7.44242 79.4187 6.92453C77.5322 6.83117 76 5.30881 76 3.42Z" fill="#F6F4EC"/>
+</svg>`;
+
+const consentSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" width="152" height="152" viewBox="0 0 152 152" fill="none">
+  <g style="mix-blend-mode:multiply" opacity="0.6">
+    <path d="M152 76C152 117.974 117.974 152 76 152C34.0264 152 0 117.974 0 76C0 34.0264 34.0264 0 76 0C117.974 0 152 34.0264 152 76ZM6.84 76C6.84 114.196 37.804 145.16 76 145.16C114.196 145.16 145.16 114.196 145.16 76C145.16 37.804 114.196 6.84 76 6.84C37.804 6.84 6.84 37.804 6.84 76Z" fill="#E9E4D3"/>
+  </g>
+  <path d="M76 3.42C76 1.53119 77.5322 -0.00803051 79.4191 0.0769191C94.2617 0.745142 108.611 5.75226 120.672 14.5147C132.732 23.2772 141.928 35.3771 147.151 49.2867C147.814 51.055 146.824 52.9879 145.028 53.5716C143.231 54.1552 141.31 53.1683 140.638 51.403C135.868 38.8662 127.543 27.9617 116.651 20.0484C105.76 12.1351 92.8162 7.58745 79.4189 6.92452C77.5324 6.83117 76 5.30881 76 3.42Z" fill="#F6F4EC"/>
+</svg>`;
+
+const gasiSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" width="152" height="152" viewBox="0 0 152 152" fill="none">
+  <g style="mix-blend-mode:multiply" opacity="0.6">
+    <path d="M152 76C152 117.974 117.974 152 76 152C34.0264 152 0 117.974 0 76C0 34.0264 34.0264 0 76 0C117.974 0 152 34.0264 152 76ZM6.84 76C6.84 114.196 37.804 145.16 76 145.16C114.196 145.16 145.16 114.196 145.16 76C145.16 37.804 114.196 6.84 76 6.84C37.804 6.84 6.84 37.804 6.84 76Z" fill="#E9E4D3"/>
+  </g>
+  <path d="M76 3.42C76 1.53119 77.5321 -0.00803098 79.419 0.0769308C91.4385 0.618134 103.175 4.00668 113.655 9.984C125.126 16.527 134.694 25.946 141.416 37.3129C148.139 48.6797 151.783 61.602 151.991 74.8062C152.18 86.869 149.495 98.7866 144.179 109.58C143.344 111.275 141.258 111.876 139.602 110.966C137.947 110.056 137.351 107.98 138.178 106.282C142.926 96.5326 145.322 85.7879 145.151 74.9137C144.963 62.8978 141.646 51.1385 135.529 40.7947C129.412 30.4509 120.705 21.8795 110.266 15.9254C100.819 10.537 90.2491 7.46049 79.4187 6.92453C77.5322 6.83117 76 5.30881 76 3.42Z" fill="#F6F4EC"/>
+</svg>`;
+
+const reset = () => {
+  title.innerText = "";
+  details.innerText = "";
+  statCircle.innerHTML = "";
+};
 
 pornStats.addEventListener("mouseover", (event) => {
+  statCircle.innerHTML = pornSvg;
   title.innerText = "Porn";
   details.innerText =
     "Some respondents felt that the topic of porn and its negative as well as positive effects on youth was missing and necessary to cover given porn’s accessibility in today’s digital age. Noah from Barrie shared, “[I wish I had learnt about] “porn and how it affects the brain and the performance of your partner”";
 });
+
 pornStats.addEventListener("mouseout", (event) => {
-  title.innerText = "";
-  details.innerText = "";
+  reset();
 });
 
 pleasureStats.addEventListener("mouseover", (event) => {
   title.innerText = "Pleasure";
+  statCircle.innerHTML = pleasureSvg;
+
   details.innerText =
     "The lack of curriculum addressing pleasure and positive aspects of sex was another evident theme in the responses. Many participants expressed their dissatisfaction with the absence of comprehensive information about the pleasurable aspects of sexual experiences. Lindsay from Moncton shared that she wished she learned “more about sex that is not penetrative between a man and woman. I wish I learned about a female orgasm because I did not understand it (as a woman) until I was 21 years old despite being sexually active since I was 16”.";
 });
 pleasureStats.addEventListener("mouseout", (event) => {
-  title.innerText = "";
-  details.innerText = "";
+  reset();
 });
 
 mfshStats.addEventListener("mouseover", (event) => {
+  statCircle.innerHTML = mfshSvg;
   title.innerText = "More Female Sexual Health";
   details.innerText =
     "Respondents also pointed out the lack of knowledge shared specifically regarding female sexualhealth. They felt that their sexual education predominantly focused on male perspectives, neglecting crucial aspects of female reproductive health and sexuality. Jasmine from Canmore shared, “[I wish I had learnt about] Female anatomy; sex; female pleasure; information about IUDs and other forms of contraception.”";
 });
 mfshStats.addEventListener("mouseout", (event) => {
-  title.innerText = "";
-  details.innerText = "";
+  reset();
 });
 
 consentStats.addEventListener("mouseover", (event) => {
   title.innerText = "Consent/Relationships";
+  statCircle.innerHTML = consentSvg;
+
   details.innerText =
     "The respondents expressed a desire for a stronger focus on consent, feeling that it had been inadequately addressed in their sexual education. Sapna from Winnipeg shared “I believe the absolute first thing all youth should be taught about is Sex-Ed...a lack of education on consent is massively hurting our society”.";
 });
 consentStats.addEventListener("mouseout", (event) => {
-  title.innerText = "";
-  details.innerText = "";
+  reset();
 });
 
 gasiStats.addEventListener("mouseover", (event) => {
   title.innerText = "Gender and Sexual Identity";
+  statCircle.innerHTML = gasiSvg;
+
   details.innerText =
     "Many respondents expressed their belief that the sexual education they received was primarily heteronormative, lacking coverage of diverse identities and failing to address the complexities of gender and sexual orientation. Only 34% of young Canadians recall learningabout sexuality and sexual orientation, and only 19% remember learning about gender identity.";
 });
+
 gasiStats.addEventListener("mouseout", (event) => {
-  title.innerText = "";
-  details.innerText = "";
+  reset();
 });
 </script>
