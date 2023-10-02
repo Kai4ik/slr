@@ -7,41 +7,56 @@
         <h2 class="text-5xl md:text-[5rem] text-dark font-headings uppercase">
           forward
         </h2>
-        <div
-          id="accordion"
-          class="transition-all ease-in-out overflow-hidden duration-500 max-h-56 md:max-h-52 3xl:max-h-48"
-        >
-          <p
-            id="accordion-text"
-            class="w-full lg:w-[80%] line-clamp-6 font-paragraphs text-sm"
+        <div>
+          <div
+            class="w-full lg:w-[80%] font-paragraphs text-sm flex flex-col gap-y-4"
           >
-            Talking about sex can be awkward (but it shouldn’t be!)<br /><br />
-             Since our initial Sex Lives Report in 2022, LetsStopAIDS, in
-            collaboration with the Angus Reid Group, has dug deep into the
-            factors affecting Canadian youth's sexual experiences. We found
-            Canadians were using fewer condoms, feeling more mental health
-            pressures, and getting more sexually adventurous.<br /><br /> The
-            report made waves, being featured in over 300 media outlets such as
-            the National Post, Toronto Star, CTV, and Montreal Gazette, reaching
-            millions across Canada.<br />
-            <br />This year, we aimed to delve into young people's relationship
-            with their sexuality and gauge their knowledge on HIV and STI
-            prevention. The message was loud and clear: The conventional methods
-            of addressing sexuality are obsolete, more so in today's age that
-            values equality, diversity, and respect. The omnipresence of social
-            media, emerging online behaviours, and the tide of disinformation
-            only add layers of complexity to this issue. We need a sex-positive
-            & comprehensive approach to Sex-Ed. <br /><br />For nearly two
-            decades, as Canada's largest Youth-HIV charity, our mission has been
-            clear: to raise HIV awareness, foster youth leadership, and reduce
-            HIV-related stigma. This is pivotal. Without proper awareness,
-            access to testing, prevention, and treatment remains elusive. And
-            with prevalent stigma, talking about sex becomes harder. <br /><br
-            />Our research isn't merely an academic exercise. It strengthens our
-            programmes and integrates youth in sculpting solutions. At
-            LetsStopAIDS, we believe that youth plays a crucial role in the
-            global response to HIV. And we are here to make that path possible.
-          </p>
+            <p>
+              Talking about sex can be awkward (but it shouldn’t be!)<br /><br
+              />
+               Since our initial Sex Lives Report in 2022, LetsStopAIDS, in
+              collaboration with the Angus Reid Group, has dug deep into the
+              factors affecting Canadian youth's sexual experiences. We found
+              Canadians were using fewer condoms, feeling more mental health
+              pressures, and getting more sexually adventurous.
+            </p>
+            <div
+              class="max-h-0 transition-all ease-in-out overflow-hidden duration-500 flex flex-col gap-y-4"
+              id="accordion"
+            >
+              <p>
+                The report made waves, being featured in over 300 media outlets
+                such as the National Post, Toronto Star, CTV, and Montreal
+                Gazette, reaching millions across Canada.
+              </p>
+              <p>
+                This year, we aimed to delve into young people's relationship
+                with their sexuality and gauge their knowledge on HIV and STI
+                prevention. The message was loud and clear: The conventional
+                methods of addressing sexuality are obsolete, more so in today's
+                age that values equality, diversity, and respect. The
+                omnipresence of social media, emerging online behaviours, and
+                the tide of disinformation only add layers of complexity to this
+                issue. We need a sex-positive & comprehensive approach to
+                Sex-Ed.
+              </p>
+              <p>
+                For nearly two decades, as Canada's largest Youth-HIV charity,
+                our mission has been clear: to raise HIV awareness, foster youth
+                leadership, and reduce HIV-related stigma. This is pivotal.
+                Without proper awareness, access to testing, prevention, and
+                treatment remains elusive. And with prevalent stigma, talking
+                about sex becomes harder.
+              </p>
+              <p>
+                Our research isn't merely an academic exercise. It strengthens
+                our programmes and integrates youth in sculpting solutions. At
+                LetsStopAIDS, we believe that youth plays a crucial role in the
+                global response to HIV. And we are here to make that path
+                possible.
+              </p>
+            </div>
+          </div>
         </div>
         <span id="readMore" class="cursor-pointer uppercase font-headings">
           read more
@@ -80,21 +95,19 @@
       class="object-cover h-full w-full"
     />
   </div>
+
+  <script>
+    const readMoreBtn = document.getElementById("readMore");
+
+    if (readMoreBtn !== null) {
+      readMoreBtn.addEventListener("click", function () {
+        const accordion = document.getElementById("accordion");
+        accordion?.classList.toggle("!max-h-[300vh]");
+
+        readMoreBtn.innerText = accordion?.classList.contains("!max-h-[300vh]")
+          ? "Read less"
+          : "read more";
+      });
+    }
+  </script>
 </div>
-
-<script>
-  const readMoreBtn = document.getElementById("readMore");
-
-  if (readMoreBtn !== null) {
-    readMoreBtn.addEventListener("click", function () {
-      const accordion = document.getElementById("accordion");
-      const accordionText = document.getElementById("accordion-text");
-      accordion?.classList.toggle("!max-h-[300vh]");
-      accordionText?.classList.toggle("!line-clamp-none");
-
-      readMoreBtn.innerText = accordion?.classList.contains("!max-h-[300vh]")
-        ? "Read less"
-        : "read more";
-    });
-  }
-</script>
