@@ -3,6 +3,8 @@
   "compilerOptions": {
     "moduleResolution": "Node",
     "baseUrl": ".",
-    "paths": {}
+    "paths": {},
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }
