@@ -1,5 +1,5 @@
 // icons
-import AiFillInstagram from "react-icons/ai";
+import { AiFillInstagram } from "react-icons/ai";
 import {
   FaFacebookF,
   FaTiktok,
