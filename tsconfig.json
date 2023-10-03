@@ -3,7 +3,9 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "baseUrl": ".",
-    "paths": {},
+    "paths": {
+      "@layouts/*": ["src/layouts/*"]
+    },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   }
