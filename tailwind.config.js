@@ -12,9 +12,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        "number-headings": ["Libre Franklin"],
-        headings: ["Almarai"],
-        paragraphs: ["Lexend"],
+        "number-headings": ["Libre Franklin", "sans-serif"],
+        headings: ["Almarai", "sans-serif"],
+        paragraphs: ["Lexend", "sans-serif"],
       },
       colors: {
         "floral-white": "#F8F6F2",

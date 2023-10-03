@@ -22,6 +22,7 @@ import Footer from "../sections/footer/index.astro";
   @font-face {
     font-family: "Almarai";
     src: url("/fonts/Almarai.woff") format("woff");
+    font-display: swap;
   }
 
   .swiper-pagination-bullet-active {
@@ -37,9 +38,50 @@ import Footer from "../sections/footer/index.astro";
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Sex Lives Report by LetsStopAIDS</title>
+
+    <meta
+      name="description"
+      content="HeyCOVID19 Version 3.0 promotes youth-friendly, bite-sized facts about COVID19 booster information translated across 25+ languages, so Canadians from all different backgrounds can protect their health."
+    />
+    <meta
+      name="keywords"
+      content="HeyCovid, HeyCovid19, Hey Covid, LetsStopAIDS, Covid19, Covid, Multilanguage, Covid Information, Covid Languages, Covid accessible, Covid Canada"
+    />
+    <link rel="icon" type="image/svg+xml" href="/heycovidfavicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta property="og:title" content="Sex Lives Report by LetsStopAIDS" />
+    <meta
+      property="og:site_name"
+      content="https://heycovid19.letsstopaids.org"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+
+    <meta
+      property="og:image"
+      content="https://heycovid19.letsstopaids.org/Opengraph.jpg"
+    />
+    <meta
+      property="og:description"
+      content="HeyCOVID19 Version 3.0 promotes youth-friendly, bite-sized facts about COVID19 booster information translated across 25+ languages, so Canadians from all different backgrounds can protect their health."
+    />
+
+    <meta name="twitter:card" content="website" />
+    <meta name="twitter:title" content="Sex Lives Report by LetsStopAIDS" />
+    <meta
+      name="twitter:description"
+      content="HeyCOVID19 Version 3.0 promotes youth-friendly, bite-sized facts about COVID19 booster information translated across 25+ languages, so Canadians from all different backgrounds can protect their health."
+    />
+    <meta
+      name="twitter:image"
+      content="https://heycovid19.letsstopaids.org/Opengraph.jpg"
+    />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
