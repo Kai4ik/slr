@@ -1,12 +1,12 @@
 // icons
-import { AiFillInstagram } from "react-icons/ai";
+import { AiFillInstagram } from "react-icons/ai/index";
 import {
   FaFacebookF,
   FaTiktok,
   FaTwitter,
   FaYoutube,
   FaLinkedin,
-} from "react-icons/fa";
+} from "react-icons/fa/index";
 import type { IconType } from "react-icons/lib";
 
 const socials = [
