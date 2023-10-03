@@ -7,7 +7,7 @@ import {
   FaYoutube,
   FaLinkedin,
 } from "react-icons/fa";
-import { IconType } from "react-icons/lib";
+import type { IconType } from "react-icons/lib";
 
 const socials = [
   { linkUrl: "https://www.facebook.com/LetsStopAIDS/", title: "Facebook" },
@@ -84,7 +84,7 @@ export default function SocialIcons(): JSX.Element {
             href={elem.link}
             target="_blank"
             rel="external noreferrer"
-            className="transition-colors duration-300 ease-in-out dark:hover:text-metallic-yellow hover:text-blood-animal"
+            className="transition-colors duration-300 ease-in-out hover:text-[#FCB001]"
           >
             <elem.icon size={elem.size} title={elem.title} />
           </a>

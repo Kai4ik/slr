@@ -1,38 +1,7 @@
 import { useState } from "react";
 // gasroap666@gmail.com
 
-// MailChimp configuration
-import mailchimp from "@mailchimp/mailchimp_marketing";
-
-mailchimp.setConfig({
-  apiKey: import.meta.env.PUBLIC_MAILCHIMP_API_KEY,
-  server: import.meta.env.PUBLIC_MAILCHIMP_SERVER_PREFIX,
-});
-
-async function MailChimpSubscribe(
-  email: string
-): Promise<{ status: string; message: string }> {
-  let response = {
-    status: "success",
-    message: "Successfully subscribed to the newsletter",
-  };
-  try {
-    const result = await mailchimp.lists.addListMember(
-      import.meta.env.PUBLIC_MAILCHIMP_LIST_ID,
-      {
-        email_address: email,
-        status: "subscribed",
-      }
-    );
-  } catch (e: any) {
-    if (e.status !== 200) {
-      console.log(e);
-      response = { message: e.response.text.detail, status: "error" };
-    }
-  }
-
-  return response;
-}
+import { MailchimpSubscribe } from "../../utils/mailchimpSubscribeFn";
 
 export default function MailChimpIntegration(): JSX.Element {
   const [email, setEmail] = useState("");
@@ -44,7 +13,7 @@ export default function MailChimpIntegration(): JSX.Element {
 
   async function subsribeUser(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const result = await MailChimpSubscribe(email);
+    const result = await MailchimpSubscribe(email);
     setResponse(result);
     setSubmitted(true);
   }
