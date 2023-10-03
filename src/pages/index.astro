@@ -1,7 +1,5 @@
 ---
-// fonts
-import "@fontsource/lexend";
-import "@fontsource/libre-franklin/800.css";
+import MainLayout from "../layouts/Main.astro";
 
 // sections
 import HeroSection from "../sections/hero.astro";
@@ -34,328 +32,276 @@ import Footer from "../sections/footer/index.astro";
   }
 </style>
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Sex Lives Report by LetsStopAIDS</title>
-
-    <meta
-      name="description"
-      content="HeyCOVID19 Version 3.0 promotes youth-friendly, bite-sized facts about COVID19 booster information translated across 25+ languages, so Canadians from all different backgrounds can protect their health."
-    />
-    <meta
-      name="keywords"
-      content="HeyCovid, HeyCovid19, Hey Covid, LetsStopAIDS, Covid19, Covid, Multilanguage, Covid Information, Covid Languages, Covid accessible, Covid Canada"
-    />
-
-    <meta property="og:title" content="Sex Lives Report by LetsStopAIDS" />
-    <meta property="og:site_name" content="" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="" />
-    <meta
-      property="og:image"
-      content="https://heycovid19.letsstopaids.org/Opengraph.jpg"
-    />
-    <meta
-      property="og:description"
-      content="HeyCOVID19 Version 3.0 promotes youth-friendly, bite-sized facts about COVID19 booster information translated across 25+ languages, so Canadians from all different backgrounds can protect their health."
-    />
-
-    <meta name="twitter:card" content="website" />
-    <meta name="twitter:title" content="Sex Lives Report by LetsStopAIDS" />
-    <meta
-      name="twitter:description"
-      content="HeyCOVID19 Version 3.0 promotes youth-friendly, bite-sized facts about COVID19 booster information translated across 25+ languages, so Canadians from all different backgrounds can protect their health."
-    />
-    <meta
-      name="twitter:image"
-      content="https://heycovid19.letsstopaids.org/Opengraph.jpg"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-    />
-  </head>
-  <body class="overflow-x-hidden w-screen">
-    <HeroSection />
-    <Forwardection />
-    <OverviewSection />
-    <TheorySection />
-    <TestimonialsSection />
-    <MissingInActionSection />
-    <CondomsSection />
-    <StiHivSection />
-    <ChartSection />
-    <ClosingRemarks />
-    <Footer />
-    <script
-      is:inline
-      src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"
-    ></script>
-    <script async>
-      (function () {
-        const locomotiveScroll = new LocomotiveScroll({
-          autoResize: false,
-        });
-
-        document.documentElement.setAttribute("lang", "en");
-
-        window.addEventListener(
-          "resize",
-          locomotiveScroll.resize.bind(locomotiveScroll)
-        );
-      })();
-    </script>
-
-    <script
-      is:inline
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-    ></script>
-    <script
-      is:inline
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
-    ></script>
-
-    <script async>
-      gsap.registerPlugin(ScrollTrigger);
-
-      gsap.utils.toArray(".section").forEach((section) => {
-        gsap.from(section.querySelectorAll(".animate-presense"), {
-          scrollTrigger: {
-            trigger: section,
-            start: "top 50%",
-          },
-          autoAlpha: 0,
-          y: 25,
-          duration: 0.75,
-          stagger: 0.25,
-        });
-
-        gsap.from(section.querySelectorAll(".arrow"), {
-          scrollTrigger: {
-            trigger: section,
-            start: "top 50%",
-          },
-          autoAlpha: 0,
-          transformOrigin: "center top",
-          scaleY: 0,
-          duration: 2,
-        });
+<MainLayout title="Sex Lives Report by LetsStopAIDS">
+  <HeroSection />
+  <Forwardection />
+  <OverviewSection />
+  <TheorySection />
+  <TestimonialsSection />
+  <MissingInActionSection />
+  <CondomsSection />
+  <StiHivSection />
+  <ChartSection />
+  <ClosingRemarks />
+  <Footer />
+  <script
+    is:inline
+    src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"
+  ></script>
+  <script async>
+    (function () {
+      const locomotiveScroll = new LocomotiveScroll({
+        autoResize: false,
       });
-    </script>
 
-    <script
-      is:inline
-      src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
-    ></script>
+      window.addEventListener(
+        "resize",
+        locomotiveScroll.resize.bind(locomotiveScroll)
+      );
+    })();
+  </script>
 
-    <script defer>
-      new Swiper(".swiper", {
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
+  <script
+    is:inline
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+  ></script>
+  <script
+    is:inline
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+  ></script>
+
+  <script async>
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray(".section").forEach((section) => {
+      gsap.from(section.querySelectorAll(".animate-presense"), {
+        scrollTrigger: {
+          trigger: section,
+          start: "top 50%",
         },
-        autoplay: {
-          delay: 6000,
-        },
+        autoAlpha: 0,
+        y: 25,
+        duration: 0.75,
+        stagger: 0.25,
       });
-    </script>
 
-    <script is:inline src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script
-      is:inline
-      src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2 "></script>
+      gsap.from(section.querySelectorAll(".arrow"), {
+        scrollTrigger: {
+          trigger: section,
+          start: "top 50%",
+        },
+        autoAlpha: 0,
+        transformOrigin: "center top",
+        scaleY: 0,
+        duration: 2,
+      });
+    });
+  </script>
 
-    <script defer>
-      const getOrCreateLegendList = (chart, id) => {
-        const legendContainer = document.getElementById(id);
+  <script
+    is:inline
+    src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-        let listContainer = legendContainer.querySelector("ul");
+  <script defer>
+    new Swiper(".swiper", {
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      autoplay: {
+        delay: 6000,
+      },
+    });
+  </script>
 
-        if (!listContainer) {
-          listContainer = document.createElement("ul");
-          listContainer.style.display = "flex";
-          listContainer.style.flexDirection = "row";
-          listContainer.style.margin = 0;
-          listContainer.style.padding = 0;
+  <script is:inline src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script
+    is:inline
+    src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2 "></script>
 
-          legendContainer.appendChild(listContainer);
+  <script defer>
+    const getOrCreateLegendList = (chart, id) => {
+      const legendContainer = document.getElementById(id);
+
+      let listContainer = legendContainer.querySelector("ul");
+
+      if (!listContainer) {
+        listContainer = document.createElement("ul");
+        listContainer.style.display = "flex";
+        listContainer.style.flexDirection = "row";
+        listContainer.style.margin = 0;
+        listContainer.style.padding = 0;
+
+        legendContainer.appendChild(listContainer);
+      }
+
+      return listContainer;
+    };
+
+    const htmlLegendPlugin = {
+      id: "htmlLegend",
+      afterUpdate(chart, args, options) {
+        const ul = getOrCreateLegendList(chart, options.containerID);
+
+        // Remove old legend items
+        while (ul.firstChild) {
+          ul.firstChild.remove();
         }
 
-        return listContainer;
-      };
+        // Reuse the built-in legendItems generator
+        const items = chart.options.plugins.legend.labels.generateLabels(chart);
 
-      const htmlLegendPlugin = {
-        id: "htmlLegend",
-        afterUpdate(chart, args, options) {
-          const ul = getOrCreateLegendList(chart, options.containerID);
+        items.forEach((item) => {
+          const li = document.createElement("li");
+          li.style.alignItems = "center";
+          li.style.cursor = "pointer";
+          li.style.display = "flex";
+          li.style.flexDirection = "row";
+          li.style.marginLeft = "10px";
 
-          // Remove old legend items
-          while (ul.firstChild) {
-            ul.firstChild.remove();
-          }
+          li.onclick = () => {
+            const { type } = chart.config;
+            if (type === "pie" || type === "doughnut") {
+              // Pie and doughnut charts only have a single dataset and visibility is per item
+              chart.toggleDataVisibility(item.index);
+            } else {
+              chart.setDatasetVisibility(
+                item.datasetIndex,
+                !chart.isDatasetVisible(item.datasetIndex)
+              );
+            }
+            chart.update();
+          };
 
-          // Reuse the built-in legendItems generator
-          const items =
-            chart.options.plugins.legend.labels.generateLabels(chart);
+          // Color box
+          const boxSpan = document.createElement("span");
+          boxSpan.style.background = item.fillStyle;
+          boxSpan.style.borderColor = item.strokeStyle;
+          boxSpan.style.borderWidth = item.lineWidth + "px";
+          boxSpan.style.display = "inline-block";
+          boxSpan.style.flexShrink = 0;
+          boxSpan.style.height = "20px";
+          boxSpan.style.marginRight = "10px";
+          boxSpan.style.width = "20px";
 
-          items.forEach((item) => {
-            const li = document.createElement("li");
-            li.style.alignItems = "center";
-            li.style.cursor = "pointer";
-            li.style.display = "flex";
-            li.style.flexDirection = "row";
-            li.style.marginLeft = "10px";
+          // Text
+          const textContainer = document.createElement("p");
+          textContainer.style.color = item.fontColor;
+          textContainer.style.margin = 0;
+          textContainer.style.padding = 0;
+          textContainer.style.textDecoration = item.hidden
+            ? "line-through"
+            : "";
 
-            li.onclick = () => {
-              const { type } = chart.config;
-              if (type === "pie" || type === "doughnut") {
-                // Pie and doughnut charts only have a single dataset and visibility is per item
-                chart.toggleDataVisibility(item.index);
-              } else {
-                chart.setDatasetVisibility(
-                  item.datasetIndex,
-                  !chart.isDatasetVisible(item.datasetIndex)
-                );
-              }
-              chart.update();
-            };
+          const text = document.createTextNode(item.text);
+          textContainer.appendChild(text);
 
-            // Color box
-            const boxSpan = document.createElement("span");
-            boxSpan.style.background = item.fillStyle;
-            boxSpan.style.borderColor = item.strokeStyle;
-            boxSpan.style.borderWidth = item.lineWidth + "px";
-            boxSpan.style.display = "inline-block";
-            boxSpan.style.flexShrink = 0;
-            boxSpan.style.height = "20px";
-            boxSpan.style.marginRight = "10px";
-            boxSpan.style.width = "20px";
+          li.appendChild(boxSpan);
+          li.appendChild(textContainer);
+          ul.appendChild(li);
+        });
+      },
+    };
 
-            // Text
-            const textContainer = document.createElement("p");
-            textContainer.style.color = item.fontColor;
-            textContainer.style.margin = 0;
-            textContainer.style.padding = 0;
-            textContainer.style.textDecoration = item.hidden
-              ? "line-through"
-              : "";
+    const ctx = document.getElementById("myChart");
+    const sizeFn = function (context) {
+      const width = context?.chart.width;
+      const size = width > 600 ? 18 : 6;
+      return size;
+    };
 
-            const text = document.createTextNode(item.text);
-            textContainer.appendChild(text);
-
-            li.appendChild(boxSpan);
-            li.appendChild(textContainer);
-            ul.appendChild(li);
-          });
-        },
-      };
-
-      const ctx = document.getElementById("myChart");
-      const sizeFn = function (context) {
-        const width = context?.chart.width;
-        const size = width > 600 ? 18 : 6;
-        return size;
-      };
-
-      new Chart(ctx, {
-        type: "bar",
-        data: {
-          labels: [
-            "Gonorrhea",
-            "Chlamydia",
-            "Hepatitis B",
-            "HIV",
-            "syphylis",
-            "Herpes simplex virus",
-            "hpv",
-            "prefer not to answer",
-          ],
-          datasets: [
-            {
-              label: "2022",
-              data: [[54], [13], [11], [8], [7], [6], [3], [12]],
-              backgroundColor: "#800001",
-              datalabels: {
-                align: "end",
-                anchor: "end",
-                display: true,
-                color: "#250101",
-                font: {
-                  size: (function (context) {
-                    const width = window.innerWidth;
-                    const size = width > 600 ? 14 : 6;
-                    return size;
-                  })(),
-                  weight: 800,
-                  family: "Libre Franklin",
-                },
-                formatter: function (value) {
-                  return `${value}%`;
-                },
-                labels: {
-                  title: {
-                    font: {
-                      weight: "bold",
-                    },
+    new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: [
+          "Gonorrhea",
+          "Chlamydia",
+          "Hepatitis B",
+          "HIV",
+          "syphylis",
+          "Herpes simplex virus",
+          "hpv",
+          "prefer not to answer",
+        ],
+        datasets: [
+          {
+            label: "2022",
+            data: [[54], [13], [11], [8], [7], [6], [3], [12]],
+            backgroundColor: "#800001",
+            datalabels: {
+              align: "end",
+              anchor: "end",
+              display: true,
+              color: "#250101",
+              font: {
+                size: (function (context) {
+                  const width = window.innerWidth;
+                  const size = width > 600 ? 14 : 6;
+                  return size;
+                })(),
+                weight: 800,
+                family: "Libre Franklin",
+              },
+              formatter: function (value) {
+                return `${value}%`;
+              },
+              labels: {
+                title: {
+                  font: {
+                    weight: "bold",
                   },
                 },
               },
-            },
-            {
-              label: "2023",
-              data: [[24], [26], [11], [8], [6], [11], [8], [35]],
-              backgroundColor: "#250101",
-              datalabels: {
-                align: "end",
-                anchor: "end",
-                display: true,
-                color: "#250101",
-                font: {
-                  size: (function (context) {
-                    const width = window.innerWidth;
-                    const size = width > 600 ? 14 : 6;
-                    return size;
-                  })(),
-                  weight: 800,
-                  family: "Libre Franklin",
-                },
-                formatter: function (value) {
-                  return `${value}%`;
-                },
-                labels: {
-                  title: {
-                    font: {
-                      weight: "bold",
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-        options: {
-          indexAxis: "y",
-          responsive: true,
-          normalized: true,
-          maintainAspectRatio: false,
-          plugins: {
-            htmlLegend: {
-              containerID: "legend-container",
-            },
-            legend: {
-              display: false,
             },
           },
+          {
+            label: "2023",
+            data: [[24], [26], [11], [8], [6], [11], [8], [35]],
+            backgroundColor: "#250101",
+            datalabels: {
+              align: "end",
+              anchor: "end",
+              display: true,
+              color: "#250101",
+              font: {
+                size: (function (context) {
+                  const width = window.innerWidth;
+                  const size = width > 600 ? 14 : 6;
+                  return size;
+                })(),
+                weight: 800,
+                family: "Libre Franklin",
+              },
+              formatter: function (value) {
+                return `${value}%`;
+              },
+              labels: {
+                title: {
+                  font: {
+                    weight: "bold",
+                  },
+                },
+              },
+            },
+          },
+        ],
+      },
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        normalized: true,
+        maintainAspectRatio: false,
+        plugins: {
+          htmlLegend: {
+            containerID: "legend-container",
+          },
+          legend: {
+            display: false,
+          },
         },
-        plugins: [ChartDataLabels, htmlLegendPlugin],
-      });
-    </script>
-  </body>
-</html>
+      },
+      plugins: [ChartDataLabels, htmlLegendPlugin],
+    });
+  </script>
+</MainLayout>
