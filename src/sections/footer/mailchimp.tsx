@@ -1,20 +1,33 @@
 import { useState } from "react";
-// gasroap666@gmail.com
-
-import { MailchimpSubscribe } from "../../utils/mailchimpSubscribeFn";
 
 export default function MailChimpIntegration(): JSX.Element {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [response, setResponse] = useState<{
-    status: string;
+    status: boolean;
     message: string;
   } | null>(null);
 
   async function subsribeUser(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const result = await MailchimpSubscribe(email);
-    setResponse(result);
+    const data = JSON.stringify({
+      email_address: email,
+      tag: "SexLivesReport",
+    });
+    const result = await fetch(import.meta.env.PUBLIC_AZURE_MAILCHIMP_FN_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: data,
+    });
+    const responseJson: string = await result.text();
+    const responseParsed: {
+      status: boolean;
+      message: string;
+    } = JSON.parse(responseJson);
+
+    setResponse(responseParsed);
     setSubmitted(true);
   }
 
@@ -56,7 +69,17 @@ export default function MailChimpIntegration(): JSX.Element {
           <span className="relative invisible w-full h-full"> Subscribe</span>
         </button>
       </form>
-      {submitted && <p className="text-isabelline">{response?.message}</p>}
+      {submitted && (
+        <p
+          className={`w-full lg:w-[50%] rounded-sm text-isabelline p-8 ${
+            response?.status
+              ? "border-green-500 bg-green-300"
+              : "border-red-500 bg-red-300"
+          } border-4 `}
+        >
+          {response?.message}
+        </p>
+      )}
     </>
   );
 }
