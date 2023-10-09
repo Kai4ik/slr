@@ -3,34 +3,21 @@ name: Production Deploy
 on: push
 
 jobs:
-  FTP-Deploy-Action:
-    name: 🎉 Deploy to cPanel
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
 
-      - name: Use latest Node.js
-        uses: actions/setup-node@v3
-        with:
-          check-latest: true
+      - name: Install, build, and upload your site output
+        uses: withastro/action@v1
 
-      - name: Cache npm dependencies
-        uses: actions/cache@v3
-        id: cache-node-modules
-        with:
-          path: "**/node_modules"
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
 
-      - name: Installing dependencies
-        run: npm install
-
-      - name: Building Application
-        run: npm run build
-
+    steps:
       - name: Deploy to Host MDS 🚀
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
