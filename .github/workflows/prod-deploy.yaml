@@ -10,6 +10,11 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
 
+      - name: Generate environment variables
+        run: |
+          touch .env
+          echo "PUBLIC_AZURE_MAILCHIMP_FN_URL=https://mailchimpsubscriber.azurewebsites.net/api/MailChimpSubscriber" >> .env
+
       - name: Install, build, and upload your site output
         uses: withastro/action@v1
 
