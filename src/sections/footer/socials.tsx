@@ -12,11 +12,11 @@ import type { IconType } from "react-icons/lib";
 const socials = [
   { linkUrl: "https://www.facebook.com/LetsStopAIDS/", title: "Facebook" },
   {
-    linkUrl: "https://www.instagram.com/letsstopaids/?hl=en",
+    linkUrl: "https://www.instagram.com/letsstopaids/",
     title: "Instagram",
   },
-  { linkUrl: "https://www.tiktok.com/@letsstopaids", title: "Tiktok" },
-  { linkUrl: "https://twitter.com/LetsStopAIDS", title: "Twitter" },
+  { linkUrl: "https://www.tiktok.com/@letsstopaids/", title: "Tiktok" },
+  { linkUrl: "https://twitter.com/LetsStopAIDS/", title: "Twitter" },
   {
     linkUrl: "https://www.youtube.com/channel/UCTkxmYJZ-IgIosZhlguNtFg",
     title: "YouTube",
@@ -80,6 +80,8 @@ export default function SocialIcons(): JSX.Element {
       <div className={`font-paragraphs flex flex-wrap space-x-6`}>
         {matchSocialIcons(socials).map((elem, index) => (
           <a
+            data-cy="sm-link"
+            data-cy-sm-type={`${elem.title.toLowerCase()}`}
             key={index}
             href={elem.link}
             target="_blank"

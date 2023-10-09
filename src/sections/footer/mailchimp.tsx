@@ -12,6 +12,7 @@ export default function MailChimpIntegration(): JSX.Element {
     event.preventDefault();
     const data = JSON.stringify({
       email_address: email,
+      status: "subscribed",
       tag: "SexLivesReport",
     });
     const result = await fetch(import.meta.env.PUBLIC_AZURE_MAILCHIMP_FN_URL, {
@@ -38,6 +39,7 @@ export default function MailChimpIntegration(): JSX.Element {
         onSubmit={subsribeUser}
       >
         <input
+          data-cy="mc-email"
           type="email"
           aria-label="Email Address"
           required
@@ -53,6 +55,7 @@ export default function MailChimpIntegration(): JSX.Element {
           consent to receive updates from our company.
         </p>
         <button
+          data-cy="mc-submit-btn"
           type="submit"
           className={`h-full w-2/5 md:w-32 bg-transparent capitalize hover:bg-floral-white font-lexend relative  inline-flex items-center justify-center px-6 py-3 overflow-hidden transition duration-300 ease-linear border-[0.75px] border-floral-white rounded-sm group `}
         >
@@ -71,11 +74,10 @@ export default function MailChimpIntegration(): JSX.Element {
       </form>
       {submitted && (
         <p
-          className={`w-full lg:w-[50%] rounded-sm text-isabelline p-8 ${
-            response?.status
-              ? "border-green-500 bg-green-300"
-              : "border-red-500 bg-red-300"
-          } border-4 `}
+          data-cy="mc-response-message"
+          className={`w-full lg:w-[70%] rounded-sm text-isabelline bg-floral-white p-8 ${
+            response?.status ? "text-[#4D8639]" : "text-[#A90E16]"
+          }`}
         >
           {response?.message}
         </p>
