@@ -15,7 +15,7 @@ const socials = [
     linkUrl: "https://www.instagram.com/letsstopaids/",
     title: "Instagram",
   },
-  { linkUrl: "https://www.tiktok.com/@letsstopaids/", title: "Tiktok" },
+  { linkUrl: "https://www.tiktok.com/@/", title: "Tiktok" },
   { linkUrl: "https://twitter.com/LetsStopAIDS/", title: "Twitter" },
   {
     linkUrl: "https://www.youtube.com/channel/UCTkxmYJZ-IgIosZhlguNtFg",
