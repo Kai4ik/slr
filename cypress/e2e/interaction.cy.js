@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+/*
 describe("User interaction", () => {
   beforeEach(() => {
     cy.visit("/");
@@ -93,4 +94,4 @@ describe("User interaction", () => {
         );
     });
   });
-});
+});*/

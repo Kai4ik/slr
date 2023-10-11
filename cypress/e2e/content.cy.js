@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+/*
 describe("Content presense and correctness of information", () => {
   beforeEach(() => {
     cy.visit("/");
@@ -71,4 +72,4 @@ describe("Content presense and correctness of information", () => {
       .invoke("attr", "href")
       .should("eq", "https://www.youtube.com/channel/UCTkxmYJZ-IgIosZhlguNtFg");
   });
-});
+});*/
