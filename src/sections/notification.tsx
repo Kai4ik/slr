@@ -44,7 +44,12 @@ export default function MailChimpNotification(): JSX.Element {
           aria-label="Email Address"
           required
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => {
+            if (submitted) {
+              setResponse(null);
+            }
+            setEmail(e.target.value);
+          }}
           placeholder="Email address"
           className={`px-3 rounded-sm  bg-floral-white  bg-opacity-70 text-dark
           placeholder-dark placeholder-opacity-75 outline-none w-full 
