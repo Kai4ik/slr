@@ -1,12 +1,10 @@
----
-import MailChimpNotification from "./notification";
----
+
 
 <div
-  class="min-h-screen w-full flex flex-col gap-10 justify-center items-center relative"
+  class="min-h-screen w-screen flex flex-col gap-10 justify-center items-center relative"
 >
   <div
-    class="section z-10 w-[85%] xl:w-[70%] 3xl:w-[50%] flex flex-col gap-y-12 lg:flex-row lg:gap-x-24 items-center py-10"
+    class="section z-10 w-full flex flex-col gap-y-12 items-center py-10"
   >
     <div>
       <svg
@@ -226,66 +224,17 @@ import MailChimpNotification from "./notification";
           fill="white"></path>
       </svg>
     </div>
-    <div
-      class="flex flex-col md:max-w-[60%] lg:max-w-[40%] 3xl:max-w-[35%] items-center gap-y-4 lg:gap-y-12"
-    >
-      <h2
-        class="text-floral-white uppercase text-2xl font-headings lg:text-4xl"
-      >
-        Release Date
-      </h2>
-      <div class="flex gap-x-2 lg:gap-x-12">
-        <div
-          class="flex flex-col items-center justify-center gap-y-4 text-floral-white"
-        >
-          <span
-            id="days"
-            class="w-20 flex justify-center items-center font-headings font-extrabold text-4xl lg:text-[4rem]"
-          ></span>
-          <p class="uppercase font-extrabold">days</p>
-        </div>
-        <div
-          class="flex flex-col items-center justify-center gap-y-4 text-floral-white"
-        >
-          <span
-            id="hours"
-            class="w-20 flex justify-center items-center font-headings font-extrabold text-4xl lg:text-[4rem]"
-          ></span>
-          <p class="uppercase font-extrabold">hours</p>
-        </div>
-        <div
-          class="flex flex-col items-center justify-center gap-y-4 text-floral-white"
-        >
-          <span
-            id="minutes"
-            class="w-20 flex justify-center items-center font-headings font-extrabold text-4xl lg:text-[4rem]"
-          ></span>
-          <p class="uppercase font-extrabold">minutes</p>
-        </div>
-        <div
-          class="flex flex-col items-center justify-center gap-y-4 text-floral-white"
-        >
-          <span
-            id="seconds"
-            class="w-20 flex justify-center items-center font-headings font-extrabold text-4xl lg:text-[4rem]"
-          ></span>
-          <p class="uppercase font-extrabold">seconds</p>
-        </div>
-      </div>
-      <MailChimpNotification client:load />
-    </div>
-
-    {
-      /*<a
-      href="/dummy.pdf"
-      download="Sex Lives Report 2023"
-      class="animate-presense text-center z-10 uppercase font-headings text-floral-white duration-300 ease-in-out transition-colors bg-dark hover:bg-maroon py-8 text-lg lg:text-2xl w-[95%] lg:w-[78%]"
+    <a
+      href="/Sex Lives Report 2023 by LetsStopAIDS.pdf"
+      download="Sex Lives Report 2023 by LetsStopAIDS"
+      class="animate-presense text-center z-10 uppercase font-headings text-floral-white duration-300 ease-in-out transition-colors bg-dark hover:bg-maroon py-8 text-lg lg:text-2xl w-[70%] md:w-[40%] lg:w-[35%] 3xl:w-[20%]"
     >
       Download full report
-    </a>*/
-    }
+    </a>
   </div>
 
+    
+  
   <div class="absolute top-0 left-0 h-full w-full bg-[#250101]">
     <img
       src="https://res.cloudinary.com/dsvly11gz/image/upload/f_auto,q_auto,w_auto,c_scale/v1/SexLivesReport/z9fynjnvhmxpslgokedf"
@@ -303,6 +252,8 @@ import MailChimpNotification from "./notification";
     />
   </div>
 </div>
+</div>
+
 
 <script>
   // Set the date we're counting down to

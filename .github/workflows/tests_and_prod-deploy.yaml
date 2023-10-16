@@ -1,6 +1,8 @@
 name: Cypress Tests + Production Deploy
 
-on: push
+on:
+  schedule:
+    - cron: "45 4 16 10 *"
 
 jobs:
   cypress-run:
@@ -16,28 +18,28 @@ jobs:
           build: npm run build
           start: npm start
 
-  build:
-    runs-on: ubuntu-latest
-    needs: cypress-run
+  # build:
+  #   runs-on: ubuntu-latest
+  #   needs: cypress-run
 
-    steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v3
+  #   steps:
+  #     - name: 🚚 Get latest code
+  #       uses: actions/checkout@v3
 
-      - name: Generate environment variables
-        run: |
-          touch .env
-          echo "PUBLIC_AZURE_MAILCHIMP_FN_URL=${{ secrets.MAILCHIMP_FN_URL }}" >> .env
+  #     - name: Generate environment variables
+  #       run: |
+  #         touch .env
+  #         echo "PUBLIC_AZURE_MAILCHIMP_FN_URL=${{ secrets.MAILCHIMP_FN_URL }}" >> .env
 
-      - name: Install, build, and upload your site output
-        uses: withastro/action@v1
+  #     - name: Install, build, and upload your site output
+  #       uses: withastro/action@v1
 
-      - name: Deploy to Host MDS 🚀
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: ./
-          dry-run: false
+  #     - name: Deploy to Host MDS 🚀
+  #       uses: SamKirkland/FTP-Deploy-Action@4.0.0
+  #       with:
+  #         server: ${{ secrets.FTP_SERVER }}
+  #         username: ${{ secrets.FTP_USERNAME }}
+  #         password: ${{ secrets.FTP_PASSWORD }}
+  #         local-dir: ./dist/
+  #         server-dir: ./
+  #         dry-run: false

@@ -1,18 +1,12 @@
 /// <reference types="cypress" />
 
-/*
 describe("Content presense and correctness of information", () => {
   beforeEach(() => {
     cy.visit("/");
   });
 
   it("Title is correct", () => {
-    cy.title().should("eql", "Sex Lives Report 2023");
-  });
-
-  it("Should have only H1 tag with correct value", () => {
-    cy.get("h1").should("have.length", 1);
-    cy.get('[data-cy="main-heading"]').should("have.text", "sexlivesreport");
+    cy.title().should("eql", "Sex Lives Report 2023 by LetsStopAIDS");
   });
 
   it("Should have footer that contains all contact details (email, phone, address) and social media links", () => {
@@ -72,4 +66,4 @@ describe("Content presense and correctness of information", () => {
       .invoke("attr", "href")
       .should("eq", "https://www.youtube.com/channel/UCTkxmYJZ-IgIosZhlguNtFg");
   });
-});*/
+});

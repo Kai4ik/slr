@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 
-/*
 describe("User interaction", () => {
   beforeEach(() => {
     cy.visit("/");
@@ -76,14 +75,6 @@ describe("User interaction", () => {
           "Yay! You have successfully subscribed to our mailing list!"
         );
 
-      cy.get("[data-cy='mc-submit-btn']").realClick();
-      cy.get("[data-cy='mc-response-message']")
-        .invoke("text")
-        .should(
-          "eq",
-          "You're already in the loop! You're already subscribed to our newsletter."
-        );
-
       cy.get("[data-cy='mc-email']").clear().type("test@gmail.com");
       cy.get("[data-cy='mc-submit-btn']").realClick();
       cy.get("[data-cy='mc-response-message']")
@@ -94,4 +85,4 @@ describe("User interaction", () => {
         );
     });
   });
-});*/
+});
