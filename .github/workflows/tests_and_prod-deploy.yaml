@@ -1,8 +1,6 @@
 name: Cypress Tests + Production Deploy
 
-on:
-  schedule:
-    - cron: "55 11 16 10 *"
+on: push
 
 jobs:
   cypress-run:
