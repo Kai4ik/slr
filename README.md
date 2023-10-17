@@ -5,6 +5,10 @@
 - [Astro.js](https://docs.astro.build/en/getting-started/)
 - [TailwindCSS](https://tailwindcss.com/docs/installation)
 
+**Testing libraries:**
+
+- [Cypress](https://www.cypress.io/)
+
 **Other libraries & packages:**
 
 - [React](https://react.dev/reference/react)
@@ -13,6 +17,14 @@
 - [Swiper.js](https://swiperjs.com/)
 - [Chart.js](https://www.chartjs.org/)
 - [react-icons](https://www.npmjs.com/package/react-icons)
+
+**MailChimp Newsletter Subscribtion:**
+
+Users can subscribe to the MailChimp newsletter by entering a valid email address and clicking the subscribe button.
+
+The underlying process involves making a POST request to an **Azure Lambda Function**, which utilizes the **MailChimp Marketing API** to manage user subscriptions. In the event that a user is already subscribed, the function will update the existing user's information with the new tag, still providing a successful result with an HTTP status code of 200.
+
+Due to the utilization of Astro JS in the project, direct access to the MailChimp Marketing API is not feasible due to CORS (Cross-Origin Resource Sharing) limitations. Therefore, an Azure Serverless Function acts as an intermediary to facilitate communication between the project and the MailChimp API.
 
 ## 🚀 Project Structure
 
